@@ -1,0 +1,137 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const features = [
+  {
+    title: 'SEO Content Writing',
+    description: 'Optimized content that ranks and converts',
+    icon: `<svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+    </svg>`
+  },
+  {
+    title: 'Social Media Content',
+    description: 'Engaging content for all social platforms',
+    icon: `<svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
+    </svg>`
+  },
+  {
+    title: 'Email Marketing',
+    description: 'Conversion-focused email campaigns',
+    icon: `<svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+    </svg>`
+  },
+  {
+    title: 'Content Strategy',
+    description: 'Data-driven content planning and execution',
+    icon: `<svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+    </svg>`
+  }
+];
+
+const process = [
+  {
+    step: 1,
+    title: 'Research & Strategy',
+    description: 'Understanding your audience and goals to create targeted content strategies.'
+  },
+  {
+    step: 2,
+    title: 'Content Creation',
+    description: 'Producing high-quality, engaging content that resonates with your audience.'
+  },
+  {
+    step: 3,
+    title: 'Optimization',
+    description: 'SEO optimization and refinement for maximum impact and reach.'
+  },
+  {
+    step: 4,
+    title: 'Analysis & Iteration',
+    description: 'Measuring performance and iterating for continuous improvement.'
+  }
+];
+---
+
+<Layout title="Content Creation">
+  <div class="pt-24">
+    <!-- Hero Section -->
+    <div class="bg-accent py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h1 class="text-4xl md:text-5xl font-heading font-bold text-secondary mb-6">
+            Content Creation
+          </h1>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            Engaging content that tells your story and connects with your audience
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {features.map(feature => (
+          <div class="bg-white rounded-lg shadow-lg p-8">
+            <div class="text-primary mb-4" set:html={feature.icon} />
+            <h3 class="text-xl font-heading font-semibold text-secondary mb-2">
+              {feature.title}
+            </h3>
+            <p class="text-gray-600">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Process Section -->
+    <div class="bg-accent py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-heading font-bold text-secondary mb-12 text-center">
+          Our Content Creation Process
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {process.map(({ step, title, description }) => (
+            <div class="relative">
+              <div class="bg-white rounded-lg shadow-lg p-8">
+                <div class="absolute -top-4 left-8 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold">
+                  {step}
+                </div>
+                <h3 class="text-xl font-heading font-semibold text-secondary mb-4 mt-2">
+                  {title}
+                </h3>
+                <p class="text-gray-600">{description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="bg-secondary rounded-lg shadow-xl overflow-hidden">
+        <div class="px-8 py-12 text-center">
+          <h2 class="text-3xl font-heading font-bold text-white mb-4">
+            Ready to Create Compelling Content?
+          </h2>
+          <p class="text-gray-300 mb-8 max-w-2xl mx-auto">
+            Let's work together to tell your story and engage your audience
+          </p>
+          <a
+            href="/hire-us"
+            class="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-secondary bg-white hover:bg-gray-100 transition-colors"
+          >
+            Get Started
+            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

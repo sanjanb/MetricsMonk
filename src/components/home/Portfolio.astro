@@ -1,0 +1,70 @@
+---
+const projects = [
+  {
+    title: 'E-commerce Transformation',
+    category: 'Business Automation',
+    image: '/images/portfolio/ecommerce.jpg',
+    href: '/portfolio/ecommerce-transformation'
+  },
+  {
+    title: 'Data-Driven Marketing',
+    category: 'Data Analytics',
+    image: '/images/portfolio/marketing.jpg',
+    href: '/portfolio/data-driven-marketing'
+  },
+  {
+    title: 'Brand Storytelling',
+    category: 'Content Creation',
+    image: '/images/portfolio/branding.jpg',
+    href: '/portfolio/brand-storytelling'
+  }
+];
+---
+
+<section class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-heading font-bold text-secondary mb-4">
+        Featured Projects
+      </h2>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        Discover how we've helped businesses achieve their goals through innovative solutions
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {projects.map(project => (
+        <a href={project.href} class="group">
+          <div class="relative overflow-hidden rounded-lg">
+            <img
+              src={project.image}
+              alt={project.title}
+              class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div class="absolute bottom-0 left-0 right-0 p-6">
+                <div class="text-sm text-primary font-medium mb-2">{project.category}</div>
+                <h3 class="text-xl font-heading font-semibold text-white mb-2">{project.title}</h3>
+                <span class="inline-flex items-center text-white">
+                  View Case Study
+                  <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <div class="text-center mt-12">
+      <a
+        href="/portfolio"
+        class="inline-flex items-center px-6 py-3 border-2 border-primary text-base font-medium rounded-md text-primary hover:bg-primary hover:text-white transition-colors"
+      >
+        View All Projects
+      </a>
+    </div>
+  </div>
+</section>

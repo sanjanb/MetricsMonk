@@ -1,0 +1,56 @@
+---
+const testimonials = [
+  {
+    quote: "Working with Metrics Monk transformed our business operations. Their expertise in automation and data analytics helped us achieve a 40% increase in efficiency.",
+    author: "Sarah Johnson",
+    role: "CEO, TechFlow Solutions",
+    image: "/images/testimonials/sarah.jpg"
+  },
+  {
+    quote: "The team's attention to detail and strategic approach to content creation has significantly improved our brand visibility and engagement rates.",
+    author: "Michael Chen",
+    role: "Marketing Director, InnovateCorp",
+    image: "/images/testimonials/michael.jpg"
+  },
+  {
+    quote: "Their web development expertise helped us create a stunning, high-performance platform that our customers love. Truly exceptional work!",
+    author: "Emma Rodriguez",
+    role: "Founder, Digital First",
+    image: "/images/testimonials/emma.jpg"
+  }
+];
+---
+
+<section class="py-24 bg-accent">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-heading font-bold text-secondary mb-4">
+        What Our Clients Say
+      </h2>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        Don't just take our word for it - hear from some of our satisfied clients
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {testimonials.map(testimonial => (
+        <div class="bg-white rounded-lg shadow-lg p-8">
+          <div class="flex items-center mb-6">
+            <img
+              src={testimonial.image}
+              alt={testimonial.author}
+              class="w-12 h-12 rounded-full object-cover"
+            />
+            <div class="ml-4">
+              <div class="font-heading font-semibold text-secondary">{testimonial.author}</div>
+              <div class="text-sm text-gray-600">{testimonial.role}</div>
+            </div>
+          </div>
+          <blockquote class="text-gray-600">
+            "{testimonial.quote}"
+          </blockquote>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

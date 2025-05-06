@@ -1,0 +1,137 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const features = [
+  {
+    title: 'Strategic Planning',
+    description: 'Develop comprehensive business strategies aligned with your goals',
+    icon: `<svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+    </svg>`
+  },
+  {
+    title: 'Process Optimization',
+    description: 'Streamline operations and improve efficiency across your organization',
+    icon: `<svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+    </svg>`
+  },
+  {
+    title: 'Market Analysis',
+    description: 'In-depth research and insights into market trends and opportunities',
+    icon: `<svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" />
+    </svg>`
+  },
+  {
+    title: 'Growth Strategy',
+    description: 'Actionable plans to accelerate business growth and expansion',
+    icon: `<svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+    </svg>`
+  }
+];
+
+const process = [
+  {
+    step: 1,
+    title: 'Discovery',
+    description: 'We begin with a thorough analysis of your business, understanding your goals, challenges, and market position.'
+  },
+  {
+    step: 2,
+    title: 'Strategy Development',
+    description: 'Our team creates a customized strategy tailored to your specific needs and objectives.'
+  },
+  {
+    step: 3,
+    title: 'Implementation',
+    description: 'We work closely with your team to implement the recommended solutions and strategies.'
+  },
+  {
+    step: 4,
+    title: 'Monitoring & Optimization',
+    description: 'Continuous monitoring and refinement of strategies to ensure optimal results.'
+  }
+];
+---
+
+<Layout title="Business Consulting">
+  <div class="pt-24">
+    <!-- Hero Section -->
+    <div class="bg-accent py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h1 class="text-4xl md:text-5xl font-heading font-bold text-secondary mb-6">
+            Business Consulting
+          </h1>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            Strategic solutions to transform your business and drive sustainable growth
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {features.map(feature => (
+          <div class="bg-white rounded-lg shadow-lg p-8">
+            <div class="text-primary mb-4" set:html={feature.icon} />
+            <h3 class="text-xl font-heading font-semibold text-secondary mb-2">
+              {feature.title}
+            </h3>
+            <p class="text-gray-600">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Process Section -->
+    <div class="bg-accent py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-heading font-bold text-secondary mb-12 text-center">
+          Our Consulting Process
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {process.map(({ step, title, description }) => (
+            <div class="relative">
+              <div class="bg-white rounded-lg shadow-lg p-8">
+                <div class="absolute -top-4 left-8 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold">
+                  {step}
+                </div>
+                <h3 class="text-xl font-heading font-semibold text-secondary mb-4 mt-2">
+                  {title}
+                </h3>
+                <p class="text-gray-600">{description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="bg-secondary rounded-lg shadow-xl overflow-hidden">
+        <div class="px-8 py-12 text-center">
+          <h2 class="text-3xl font-heading font-bold text-white mb-4">
+            Ready to Transform Your Business?
+          </h2>
+          <p class="text-gray-300 mb-8 max-w-2xl mx-auto">
+            Let's discuss how our consulting services can help you achieve your business goals
+          </p>
+          <a
+            href="/hire-us"
+            class="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-secondary bg-white hover:bg-gray-100 transition-colors"
+          >
+            Get Started
+            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

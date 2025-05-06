@@ -1,0 +1,137 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const projects = [
+  {
+    title: 'E-commerce Transformation',
+    category: 'Business Automation',
+    description: 'Revolutionized online retail operations with automated inventory and order management.',
+    image: '/images/portfolio/ecommerce.jpg',
+    client: 'TechStyle Fashion',
+    results: ['150% increase in order processing speed', '35% reduction in operational costs'],
+    href: '/portfolio/ecommerce-transformation'
+  },
+  {
+    title: 'Data-Driven Marketing',
+    category: 'Data Analytics',
+    description: 'Implemented comprehensive analytics solution for targeted marketing campaigns.',
+    image: '/images/portfolio/marketing.jpg',
+    client: 'Global Media Corp',
+    results: ['45% improvement in campaign ROI', '2x increase in customer engagement'],
+    href: '/portfolio/data-driven-marketing'
+  },
+  {
+    title: 'Brand Storytelling',
+    category: 'Content Creation',
+    description: 'Developed compelling brand narrative and content strategy for market expansion.',
+    image: '/images/portfolio/branding.jpg',
+    client: 'Innovative Solutions Inc',
+    results: ['80% growth in brand awareness', '3x increase in social media engagement'],
+    href: '/portfolio/brand-storytelling'
+  },
+  {
+    title: 'Digital Transformation',
+    category: 'Business Consulting',
+    description: 'Guided complete digital transformation of traditional business processes.',
+    image: '/images/portfolio/digital-transformation.jpg',
+    client: 'Legacy Industries',
+    results: ['40% increase in operational efficiency', '25% cost reduction'],
+    href: '/portfolio/digital-transformation'
+  },
+  {
+    title: 'E-learning Platform',
+    category: 'Web Development',
+    description: 'Built scalable online learning platform with advanced features.',
+    image: '/images/portfolio/elearning.jpg',
+    client: 'EduTech Solutions',
+    results: ['100,000+ active users', '95% user satisfaction rate'],
+    href: '/portfolio/elearning-platform'
+  },
+  {
+    title: 'Supply Chain Optimization',
+    category: 'Business Automation',
+    description: 'Automated supply chain processes for improved efficiency.',
+    image: '/images/portfolio/supply-chain.jpg',
+    client: 'Global Logistics Co',
+    results: ['50% reduction in processing time', '30% cost savings'],
+    href: '/portfolio/supply-chain-optimization'
+  }
+];
+
+const categories = [...new Set(projects.map(project => project.category))];
+---
+
+<Layout title="Portfolio">
+  <div class="pt-24">
+    <div class="bg-accent py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h1 class="text-4xl md:text-5xl font-heading font-bold text-secondary mb-6">
+            Our Portfolio
+          </h1>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            Discover how we've helped businesses achieve their goals through innovative solutions
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <!-- Category Filter -->
+      <div class="flex flex-wrap justify-center gap-4 mb-12">
+        <button class="px-4 py-2 rounded-md bg-primary text-white hover:bg-primary/90 transition-colors">
+          All
+        </button>
+        {categories.map(category => (
+          <button class="px-4 py-2 rounded-md bg-gray-200 text-gray-700 hover:bg-gray-300 transition-colors">
+            {category}
+          </button>
+        ))}
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {projects.map(project => (
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div class="relative overflow-hidden group">
+              <img
+                src={project.image}
+                alt={project.title}
+                class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div class="absolute bottom-0 left-0 right-0 p-6">
+                  <div class="text-sm text-primary font-medium mb-2">{project.category}</div>
+                  <h3 class="text-xl font-heading font-semibold text-white mb-2">{project.title}</h3>
+                  <a
+                    href={project.href}
+                    class="inline-flex items-center text-white"
+                  >
+                    View Case Study
+                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="text-sm text-primary font-medium mb-2">{project.client}</div>
+              <p class="text-gray-600 mb-4">{project.description}</p>
+              <div class="space-y-2">
+                {project.results.map(result => (
+                  <div class="flex items-center text-sm text-gray-600">
+                    <svg class="w-4 h-4 text-primary mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    {result}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</Layout>

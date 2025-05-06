@@ -1,0 +1,88 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const sections = [
+  {
+    title: 'What Are Cookies',
+    content: `Cookies are small text files that are placed on your device when you visit our website. They help us provide you with a better experience and understand how you use our site.`
+  },
+  {
+    title: 'Types of Cookies We Use',
+    content: `• Essential Cookies: Required for basic website functionality
+      • Analytics Cookies: Help us understand how visitors use our site
+      • Functional Cookies: Remember your preferences and settings
+      • Marketing Cookies: Track your browsing habits for targeted advertising`
+  },
+  {
+    title: 'How We Use Cookies',
+    content: `We use cookies to:
+      • Understand website traffic and usage
+      • Remember your preferences
+      • Improve our website and services
+      • Provide personalized content and advertising
+      • Analyze our website performance`
+  },
+  {
+    title: 'Managing Cookies',
+    content: `You can control cookies through your browser settings. You can:
+      • Block all cookies
+      • Delete existing cookies
+      • Allow only certain types of cookies
+      Note that blocking some cookies may affect website functionality.`
+  },
+  {
+    title: 'Third-Party Cookies',
+    content: `We may use third-party services that set their own cookies. These services include:
+      • Analytics tools
+      • Social media platforms
+      • Advertising networks
+      We do not control these third-party cookies.`
+  },
+  {
+    title: 'Updates to This Policy',
+    content: `We may update this Cookie Policy periodically. Please check back regularly for any changes.`
+  },
+  {
+    title: 'Contact Us',
+    content: `If you have questions about our Cookie Policy, please contact us at:
+      Email: metricsmonk@gmail.com
+      Phone: +91 95357 42673`
+  }
+];
+---
+
+<Layout title="Cookie Policy">
+  <div class="pt-24">
+    <div class="bg-accent py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h1 class="text-4xl md:text-5xl font-heading font-bold text-secondary mb-6">
+            Cookie Policy
+          </h1>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            Last updated: {new Date().toLocaleDateString()}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="prose prose-lg max-w-none">
+        <p class="text-gray-600 mb-8">
+          This Cookie Policy explains how Metrics Monk uses cookies and similar technologies to recognize you when you visit our website.
+        </p>
+
+        {sections.map(section => (
+          <div class="mb-8">
+            <h2 class="text-2xl font-heading font-bold text-secondary mb-4">
+              {section.title}
+            </h2>
+            <div class="text-gray-600 whitespace-pre-line">
+              {section.content}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</Layout>

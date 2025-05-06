@@ -1,0 +1,245 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const openings = [
+  {
+    title: 'Senior Business Consultant',
+    department: 'Business Consulting',
+    location: 'Remote',
+    type: 'Full-time',
+    experience: '5+ years',
+    description: 'We are looking for an experienced business consultant to help our clients transform their operations and achieve sustainable growth.',
+    responsibilities: [
+      'Develop and implement strategic business solutions',
+      'Lead client engagements and maintain strong relationships',
+      'Conduct market research and analysis',
+      'Create detailed business plans and proposals'
+    ],
+    requirements: [
+      'Bachelors degree in Business or related field',
+      'Proven consulting experience',
+      'Strong analytical and problem-solving skills',
+      'Excellent communication and presentation abilities'
+    ]
+  },
+  {
+    title: 'Web Developer',
+    department: 'Web Development',
+    location: 'Remote',
+    type: 'Full-time',
+    experience: '3+ years',
+    description: 'Join our web development team to create innovative and scalable solutions for our clients.',
+    responsibilities: [
+      'Develop responsive web applications',
+      'Collaborate with designers and back-end developers',
+      'Optimize applications for performance',
+      'Write clean, maintainable code'
+    ],
+    requirements: [
+      'Strong proficiency in JavaScript, HTML, and CSS',
+      'Experience with modern frameworks (React, Vue, etc.)',
+      'Understanding of web performance optimization',
+      'Knowledge of version control systems'
+    ]
+  },
+  {
+    title: 'Content Strategist',
+    department: 'Content Creation',
+    location: 'Remote',
+    type: 'Full-time',
+    experience: '2+ years',
+    description: 'We're seeking a creative content strategist to develop engaging content strategies for our clients.',
+    responsibilities: [
+      'Develop content strategies aligned with business goals',
+      'Create editorial calendars and content plans',
+      'Manage content creation and distribution',
+      'Analyze content performance metrics'
+    ],
+    requirements: [
+      'Proven experience in content strategy',
+      'Strong writing and editing skills',
+      'SEO knowledge',
+      'Experience with content management systems'
+    ]
+  }
+];
+---
+
+<Layout title="Careers">
+  <div class="pt-24">
+    <div class="bg-accent py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h1 class="text-4xl md:text-5xl font-heading font-bold text-secondary mb-6">
+            Join Our Team
+          </h1>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            Be part of a team that's transforming businesses through innovation
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <!-- Why Join Us Section -->
+      <div class="mb-16">
+        <h2 class="text-3xl font-heading font-bold text-secondary mb-8 text-center">
+          Why Join Metrics Monk?
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="text-center p-6">
+            <div class="text-primary mb-4">
+              <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h -11h-7z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-heading font-semibold text-secondary mb-2">Innovation First</h3>
+            <p class="text-gray-600">Work on cutting-edge projects and help shape the future of business technology</p>
+          </div>
+          <div class="text-center p-6">
+            <div class="text-primary mb-4">
+              <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-heading font-semibold text-secondary mb-2">Growth Opportunities</h3>
+            <p class="text-gray-600">Continuous learning and career development opportunities to help you grow</p>
+          </div>
+          <div class="text-center p-6">
+            <div class="text-primary mb-4">
+              <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-heading font-semibold text-secondary mb-2">Great Culture</h3>
+            <p class="text-gray-600">Join a collaborative team that values creativity, diversity, and work-life balance</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Current Openings -->
+      <div>
+        <h2 class="text-3xl font-heading font-bold text-secondary mb-8 text-center">
+          Current Openings
+        </h2>
+        <div class="space-y-8">
+          {openings.map(opening => (
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+              <div class="p-8">
+                <div class="flex flex-wrap items-start justify-between mb-6">
+                  <div>
+                    <h3 class="text-2xl font-heading font-semibold text-secondary mb-2">
+                      {opening.title}
+                    </h3>
+                    <div class="flex flex-wrap gap-4 text-sm">
+                      <span class="inline-flex items-center text-gray-600">
+                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                        </svg>
+                        {opening.department}
+                      </span>
+                      <span class="inline-flex items-center text-gray-600">
+                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        {opening.location}
+                      </span>
+                      <span class="inline-flex items-center text-gray-600">
+                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        {opening.type}
+                      </span>
+                      <span class="inline-flex items-center text-gray-600">
+                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                        {opening.experience}
+                      </span>
+                    </div>
+                  </div>
+                  <a
+                    href={`/careers/apply?position=${encodeURIComponent(opening.title)}`}
+                    class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-primary/90 transition-colors"
+                  >
+                    Apply Now
+                  </a>
+                </div>
+
+                <p class="text-gray-600 mb-6">{opening.description}</p>
+
+                <div class="space-y-6">
+                  <div>
+                    <h4 class="text-lg font-semibold text-secondary mb-2">Key Responsibilities</h4>
+                    <ul class="space-y-2">
+                      {opening.responsibilities.map(item => (
+                        <li class="flex items-start">
+                          <svg class="w-5 h-5 text-primary mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                          </svg>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h4 class="text-lg font-semibold text-secondary mb-2">Requirements</h4>
+                    <ul class="space-y-2">
+                      {opening.requirements.map(item => (
+                        <li class="flex items-start">
+                          <svg class="w-5 h-5 text-primary mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                          </svg>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Application Process -->
+      <div class="mt-16">
+        <h2 class="text-3xl font-heading font-bold text-secondary mb-8 text-center">
+          Our Application Process
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div class="text-center">
+            <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-2xl font-bold text-primary">1</span>
+            </div>
+            <h3 class="text-lg font-semibold text-secondary mb-2">Apply Online</h3>
+            <p class="text-gray-600">Submit your application through our careers portal</p>
+          </div>
+          <div class="text-center">
+            <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-2xl font-bold text-primary">2</span>
+            </div>
+            <h3 class="text-lg font-semibold text-secondary mb-2">Initial Review</h3>
+            <p class="text-gray-600">Our team reviews your application and experience</p>
+          </div>
+          <div class="text-center">
+            <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-2xl font-bold text-primary">3</span>
+            </div>
+            <h3 class="text-lg font-semibold text-secondary mb-2">Interviews</h3>
+            <p class="text-gray-600">Multiple rounds to assess skills and cultural fit</p>
+          </div>
+          <div class="text-center">
+            <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-2xl font-bold text-primary">4</span>
+            </div>
+            <h3 class="text-lg font-semibold text-secondary mb-2">Offer</h3>
+            <p class="text-gray-600">Selected candidates receive offer and onboarding details</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

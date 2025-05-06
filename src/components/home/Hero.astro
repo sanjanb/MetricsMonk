@@ -1,0 +1,111 @@
+---
+import { Image } from 'astro:assets';
+---
+
+<section class="relative min-h-screen flex items-center bg-secondary overflow-hidden">
+  <!-- Background Animation -->
+  <div class="absolute inset-0 z-0">
+    <div class="absolute inset-0 bg-gradient-to-br from-secondary via-secondary to-primary opacity-90"></div>
+    <div class="absolute inset-0 bg-[url('/images/grid-pattern.svg')] opacity-20"></div>
+    <div class="absolute inset-0">
+      <div class="absolute inset-0 bg-gradient-to-t from-secondary via-transparent to-transparent"></div>
+      <video
+        class="w-full h-full object-cover opacity-30"
+        autoplay
+        loop
+        muted
+        playsinline
+        poster="/images/hero-poster.jpg"
+      >
+        <source src="/videos/hero-background.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+
+  <!-- Floating Elements -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none">
+    <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/20 rounded-full mix-blend-multiply filter blur-xl animate-blob"></div>
+    <div class="absolute top-1/3 right-1/4 w-64 h-64 bg-purple-300/20 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000"></div>
+    <div class="absolute bottom-1/4 left-1/3 w-64 h-64 bg-pink-300/20 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-4000"></div>
+  </div>
+  
+  <!-- Content -->
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+    <div class="text-center">
+      <div class="mb-8 inline-flex items-center px-6 py-2 rounded-full border border-primary/30 bg-primary/10">
+        <span class="text-primary font-medium">Transforming Businesses</span>
+      </div>
+      
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-heading font-bold text-white mb-6">
+        Elevating Businesses with
+        <span class="text-primary relative">
+          Expertise & Innovation
+          <svg class="absolute -bottom-2 left-0 w-full" viewBox="0 0 358 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 5C118.333 5 292.667 5 355 5" stroke="#FF3333" stroke-width="6" stroke-linecap="round"/>
+          </svg>
+        </span>
+      </h1>
+      
+      <p class="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto">
+        Your Partner in Consulting, Creation, Automation, and Beyond
+      </p>
+      
+      <div class="flex flex-col sm:flex-row justify-center gap-6">
+        <a
+          href="#services"
+          class="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-md text-white bg-primary hover:bg-primary/90 transition-all transform hover:-translate-y-1 hover:shadow-lg"
+        >
+          Explore Services
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </a>
+        <a
+          href="/hire-us"
+          class="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-md text-white border-2 border-white hover:bg-white hover:text-secondary transition-all transform hover:-translate-y-1 hover:shadow-lg"
+        >
+          Hire Us
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+</style>

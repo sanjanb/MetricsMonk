@@ -1,0 +1,170 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const team = [
+  {
+    name: 'Sanjan B M',
+    role: 'CEO & Founder',
+    image: '/images/team/john-smith.jpg',
+    bio: 'With over 15 years of experience in digital transformation, John leads our vision for innovative business solutions.',
+    linkedin: 'https://linkedin.com/in/sanjan-bm'
+  },
+  {
+    name: 'Niranjan Shaiva',
+    role: 'Head of Business Consulting',
+    image: '/images/team/sarah-johnson.jpg',
+    bio: 'Sarah brings deep expertise in strategic planning and operational excellence to help businesses achieve their goals.',
+    linkedin: 'https://linkedin.com/in/Niranjan'
+  },
+  {
+    name: 'Mohith D L',
+    role: 'Technical Director',
+    image: '/images/team/michael-chen.jpg',
+    bio: 'Michael oversees our technical initiatives, ensuring cutting-edge solutions for our clients.',
+    linkedin: 'https://linkedin.com/in/mohith'
+  },
+  {
+    name: 'Emma Rodriguez',
+    role: 'Creative Director',
+    image: '/images/team/emma-rodriguez.jpg',
+    bio: 'Emma leads our creative team, bringing innovative design thinking to every project.',
+    linkedin: 'https://linkedin.com/in/emma-rodriguez'
+  }
+];
+
+const values = [
+  {
+    title: 'Innovation',
+    description: 'We constantly push boundaries to deliver cutting-edge solutions.',
+    icon: `<svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+    </svg>`
+  },
+  {
+    title: 'Excellence',
+    description: 'We maintain the highest standards in everything we do.',
+    icon: `<svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+    </svg>`
+  },
+  {
+    title: 'Collaboration',
+    description: 'We work closely with our clients to ensure mutual success.',
+    icon: `<svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+    </svg>`
+  },
+  {
+    title: 'Integrity',
+    description: 'We operate with transparency and honesty in all our dealings.',
+    icon: `<svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+    </svg>`
+  }
+];
+---
+
+<Layout title="About Us">
+  <div class="pt-24">
+    <!-- Hero Section -->
+    <div class="bg-accent py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h1 class="text-4xl md:text-5xl font-heading font-bold text-secondary mb-6">
+            About Metrics<span class="text-primary">Monk</span>
+          </h1>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            We're a team of experts dedicated to transforming businesses through innovative digital solutions
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mission Section -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl font-heading font-bold text-secondary mb-6">
+            Our Mission
+          </h2>
+          <p class="text-gray-600 text-lg mb-6">
+            At Metrics Monk, our mission is to empower businesses with innovative digital solutions that drive growth and success. We combine expertise, creativity, and technology to deliver exceptional results for our clients.
+          </p>
+          <p class="text-gray-600 text-lg">
+            We believe in building lasting partnerships with our clients, understanding their unique challenges, and delivering tailored solutions that exceed expectations.
+          </p>
+        </div>
+        <div class="relative">
+          <img
+            src="/images/about/mission.jpg"
+            alt="Our mission"
+            class="rounded-lg shadow-lg"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Values Section -->
+    <div class="bg-accent py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-heading font-bold text-secondary mb-4">
+            Our Values
+          </h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            The principles that guide everything we do
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {values.map(value => (
+            <div class="bg-white rounded-lg p-6 text-center">
+              <div class="text-primary mb-4 flex justify-center" set:html={value.icon} />
+              <h3 class="text-xl font-heading font-semibold text-secondary mb-2">
+                {value.title}
+              </h3>
+              <p class="text-gray-600">
+                {value.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Team Section -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-heading font-bold text-secondary mb-4">
+          Our Team
+        </h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Meet the experts behind Metrics Monk
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {team.map(member => (
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <img
+              src={member.image}
+              alt={member.name}
+              class="w-full h-64 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-heading font-semibold text-secondary mb-1">
+                <a href={member.linkedin} target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors">
+                  {member.name}
+                </a>
+              </h3>
+              <div class="text-primary font-medium mb-4">{member.role}</div>
+              <p class="text-gray-600">
+                {member.bio}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</Layout>
